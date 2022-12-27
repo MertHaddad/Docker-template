@@ -1,0 +1,23 @@
+services:
+  nodejs_service:
+    build: ./nodejsService
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app/volumes_data
+    environment:
+      PORT: 3000
+      
+  python_service:
+    build: ./pythonService
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/app/volumes_data
+    # environment:
+    #   PORT: 5001
+
+  
+
+volumes:
+  volumes_data:
