@@ -12,9 +12,6 @@ app.listen(port, () => {
   fs.writeFile(
     "./volumes_data/volumes_data/nodejs_log.txt",
     "Nodejs service started at: " + new Date().toLocaleString(),
-    function (err) {
-      if (err) return console.log(err);
-    }
+    () => {}
   );
-  console.log(`app is running...`);
 });

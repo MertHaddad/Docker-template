@@ -1,23 +1,42 @@
-Contents:
 
--How to create nodejs/python Docker container. -How to store data outside of the
-container.  
--How to run multi services at the same time as one container.(ideal for
-microservice arch.)
-
+# Docker Template
 I used Docker compose tool to run more than one service from different
-containers.(Nodejs-Express/Python-Flask) useful commits :  
- -build a single container:  
- docker build -t <name:version> .
+containers in just one command, and volumes to store data outside of the container or share data between containers. Stack : Nodejs-Express/Python-Flask
+## Content:
+- How to create nodejs/python Docker containers.
+- How to store data outside of the container.
+- How to define your application stack in a file using Docker Compose to help define multi-container applications.(ideal for microservice arch.)
 
--run specific container with port forwarding:  
- docker run -p 3000:3001 <container ID>
+## Requirements:
+Have Docker installed on your machine. [get-docker](https://docs.docker.com/get-docker/)
+## Useful commands:
 
--compose more than one container:  
- docker compose up
+#### Get the currently installed version of docker:
+```http
+  docker –version
+```
+#### Build a single container:
+```http
+  docker build -t name:version .
+```
+#### Run specific container with port forwarding:
 
--check compose log:  
-docker compose logs -f
+```http
+  docker run -p 3000:3001
+```
+#### Compose more than one container:
+```http
+  docker compose up
+```
+#### Check compose log:
+```http
+  docker compose logs -f
+```
+#### List all container including stopped container:
+```http
+  docker ps -a 
+```
 
-The best place to learn will always be the docs:  
- https://docs.docker.com/
+
+
+### [Visit Docker docs for more](https://docs.docker.com/)...
