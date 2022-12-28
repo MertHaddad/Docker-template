@@ -17,7 +17,5 @@ services:
     # environment:
     #   PORT: 5001
 
-  
-
 volumes:
   volumes_data:
