@@ -1,6 +1,7 @@
 services:
   nodejs_service:
     build: ./nodejsService
+    image: merthaddad/nodejs_project
     ports:
       - 3000:3000
     volumes:
@@ -10,12 +11,27 @@ services:
       
   python_service:
     build: ./pythonService
+    image: merthaddad/python_project
     ports:
       - 5000:5000
     volumes:
       - ./:/app/volumes_data
-    # environment:
-    #   PORT: 5001
+  
+  react_project:
+    build: ./reactjsProject
+    image: merthaddad/reactjs_project
+    ports:
+      - 3001:3001
+    volumes:
+      - ./:/app/volumes_data
+  
+  vue_project:
+    build: ./vueProject
+    image: merthaddad/vue_project
+    ports:
+      - 3002:3002
+    volumes:
+      - ./:/app/volumes_data
 
 volumes:
   volumes_data:
